@@ -22,8 +22,8 @@ A popular sub-component of `@RestController` is `@GetMapping`, though which you 
 
 ### 4. `@Autowired`
 
-`@AutoWired` annotation is used to inject the dependency of one bean into another.
-When you annotate a method or field with `@AutoWired`, SpringBoot will inejct the dependency automatically and
+`@Autowired` annotation is used to inject the dependency of one bean into another.
+When you annotate a method or field with `@Autowired`, SpringBoot will inejct the dependency automatically and
 find the bean that matches that field or parameter. 
 
 In other words, `@Autowired` annotation in SpringBoot manages the entire life cycle of the object. 
