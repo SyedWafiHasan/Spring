@@ -29,3 +29,10 @@ find the bean that matches that field or parameter.
 In other words, `@Autowired` annotation in SpringBoot manages the entire life cycle of the object. 
 
 Tip : If you only have one constructor, `@Autowired` on constructor is optional. 
+
+## Component Scanning
+- Spring will scan your Java classes for special annotations like `@Component` etc.
+- Automatically registers the beans in the Spring container.
+- Auto-scanning is enabled by importing `SpringBootApplication` class.
+  - Behind the scenes, this is enabled by `@EnableAutoConfiguration`, `@ComponentScan` and `@Configuration` annotations.
+- 
