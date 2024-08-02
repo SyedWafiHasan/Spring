@@ -35,4 +35,35 @@ Tip : If you only have one constructor, `@Autowired` on constructor is optional.
 - Automatically registers the beans in the Spring container.
 - Auto-scanning is enabled by importing `SpringBootApplication` class.
   - Behind the scenes, this is enabled by `@EnableAutoConfiguration`, `@ComponentScan` and `@Configuration` annotations.
-- 
+- `@EnableAutoConfiguration` enables Spring Boot's auto-configuration support.
+- `@ComponentScan` enables component scanning of current package, and also recursively scans sub packages.
+- `@Configuration` is able to register extra beans with the `@Bean` annotation or import other configuration classes.
+
+In the following code snippet, the `SpringApplication` class bootstraps your Spring Boot Application. 
+```
+package in.co.swh.springcoredemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringcoredemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringcoredemoApplication.class, args);
+	}
+}
+
+```
+
+Behind the scenes, this will create the application context, register all the beans
+and start the embedded Tomcat server.
+
+### More on Component Scanning
+- By default, Spring Boot starts component scanning
+  - From the same package as your main Spring Boot Application
+  - Also scans sub packages recursively
+- This implicitly defines a base search package
+  - This allows you to leverage default component scanning
+  - No need to explicitly reference base package name
+- Component scanning will not work if you change package name unless you explicitly list packages to scan
