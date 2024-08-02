@@ -66,4 +66,8 @@ and start the embedded Tomcat server.
 - This implicitly defines a base search package
   - This allows you to leverage default component scanning
   - No need to explicitly reference base package name
-- Component scanning will not work if you change package name unless you explicitly list packages to scan
+- Component scanning will not work if you change package name unless you explicitly list packages to scan.
+
+To demonstrate this, files were moved into a new sub-package as part of commit `a78072`. The application continues to work, as this is still a sub-package of the original package. 
+
+However, under commit `8cfe4e`, files were moved to a new package which was created outside the main package. This resulted in the application failing to start, as it was unable to locate the necessary components. 
